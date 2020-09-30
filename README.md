@@ -1,1 +1,1 @@
-# nordic-it-netcore
+# nordic-it-netcore lessons
