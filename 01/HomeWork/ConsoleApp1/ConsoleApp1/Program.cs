@@ -11,6 +11,8 @@ namespace FirstLesson
             string name = Console.ReadLine();
             Thread.Sleep(5000);
             Console.WriteLine($"здравствуйте, {name}!");
+            Thread.Sleep(5000);
+            Console.WriteLine($"Прощайте, {name}!");
             Console.ReadKey();
         }
     }
