@@ -6,7 +6,6 @@ namespace _2nd_HomeWork
 	{
 		static void Main(string[] args)
 		{
-
 			Console.Write("Введите первое число: ");
 			string firstInputNumber = Console.ReadLine();
 			int firstNumber = int.Parse(firstInputNumber);

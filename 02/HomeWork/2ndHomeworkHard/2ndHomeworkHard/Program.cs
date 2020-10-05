@@ -51,7 +51,7 @@ namespace _2ndHomeworkHard
 			{
 				Console.WriteLine("Результат остатка от деления = {0}", firstNumber % secondNumber);
 			}
-			Console.ReadKey();
+			Console.ReadLine();
 		}
 	}
 }
