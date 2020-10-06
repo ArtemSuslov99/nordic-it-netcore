@@ -6,15 +6,16 @@ namespace _2nd_HomeWork
 	{
 		static void Main(string[] args)
 		{
+			string userInputNumber;
 			Console.Write("Введите первое число: ");
-			string firstInputNumber = Console.ReadLine();
-			int firstNumber = int.Parse(firstInputNumber);
+			userInputNumber = Console.ReadLine();
+			int firstArgument = int.Parse(userInputNumber);
 			Console.Write("Введите второе число: ");
-			string secondInputNumber = Console.ReadLine();
-			int secondNumber = int.Parse(secondInputNumber);
-			Console.WriteLine($"Сумма чисел равна: {firstNumber + secondNumber}");
-			Console.WriteLine($"Разница чисел равна: {firstNumber - secondNumber}");
-			Console.WriteLine($"Произведение чисел равна: {firstNumber * secondNumber}");
+			userInputNumber = Console.ReadLine();
+			int secondArgument = int.Parse(userInputNumber);
+			Console.WriteLine($"Сумма чисел равна: {firstArgument + secondArgument}");
+			Console.WriteLine($"Разница чисел равна: {firstArgument - secondArgument}");
+			Console.WriteLine($"Произведение чисел равна: {firstArgument * secondArgument}");
 
 		}
 	}
