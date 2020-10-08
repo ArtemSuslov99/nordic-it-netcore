@@ -121,6 +121,28 @@ namespace _3d_lesson
 
 			//string s = "10";
 			//Console.WriteLine(s.PadRight(4));
+			const int fun = 2;
+			string[] trees = new string[fun];
+			int[] ages = new int[fun];
+
+			Console.WriteLine("Please, enter three names of trees, each on new string");
+
+			for (int i = 0; i < trees.Length; i++)
+			{
+				trees[i] = Console.ReadLine();
+			}
+
+			Console.SetCursorPosition(left: 10, top: 20);
+
+			Console.WriteLine("Please, enter ages of these trees, each on new string");
+			for (int i = 0; i < ages.Length; i++)
+			{
+				ages[i] = int.Parse(Console.ReadLine());
+			}
+			for (int i = 0; i < ages.Length; i++)
+			{
+				Console.WriteLine(trees[i] + " " + ages[i]);
+			}
 		}
 	}
 }
