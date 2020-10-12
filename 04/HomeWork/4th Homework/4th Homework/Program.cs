@@ -3,19 +3,22 @@ using System.Globalization;
 
 namespace _4th_Homework
 {
-	enum containersType
+	enum ContainerType
 	{
-		OneLiter = 1,
-		Fiveliter = 5,
-		Twentyliter = 20
+		Small,
+		Medium,
+		Large
 	}
 	class Program
 	{
 		static void Main(string[] args)
 		{
-			int firstContainer = 0;
-			int secondContainer = 0;
-			int thirdContainer = 0;
+			const int smallContainerSize = 1;
+			const int mediumContainerSize = 5;
+			const int largeContainerSize = 20;
+			var firstContainer = ContainerType.Small;
+			var secondContainer = ContainerType.Medium;
+			var thirdContainer = ContainerType.Large;
 			string delimite =
 				CultureInfo
 				.CurrentCulture
@@ -28,29 +31,31 @@ namespace _4th_Homework
 			double firstNumber = double.Parse(firstInputNumber);
 
 			Console.WriteLine("Вам потребуются следующие контейнеры:");
-			for (thirdContainer = 0; (double)containersType.Twentyliter <= firstNumber; thirdContainer++)
+			for (thirdContainer = 0; largeContainerSize <= firstNumber; thirdContainer++)
 			{
-				firstNumber = Math.Ceiling(firstNumber - (double)containersType.Twentyliter);
+				firstNumber = Math.Ceiling(firstNumber - largeContainerSize);
 			}
 			if (thirdContainer != 0)
 			{
-				Console.WriteLine($"20л: " + thirdContainer + "шт.");
+				Console.WriteLine($"20л: " + (int)thirdContainer + "шт.");
 			}
-			for (secondContainer = 0; (double)containersType.Fiveliter <= firstNumber; secondContainer++)
+
+			for (secondContainer = 0; mediumContainerSize <= firstNumber; secondContainer++)
 			{
-				firstNumber = Math.Ceiling(firstNumber - (double)containersType.Fiveliter);
+				firstNumber = Math.Ceiling(firstNumber - mediumContainerSize);
 			}
 			if (secondContainer != 0)
 			{
-				Console.WriteLine($"5л: " + secondContainer + "шт.");
+				Console.WriteLine($"5л: " + (int)secondContainer + "шт.");
 			}
-			for (firstContainer = 0; (double)containersType.OneLiter <= firstNumber; firstContainer++)
+
+			for (firstContainer = 0; smallContainerSize <= firstNumber; firstContainer++)
 			{
-				firstNumber = Math.Ceiling(firstNumber - (double)containersType.OneLiter);
+				firstNumber = Math.Ceiling(firstNumber - smallContainerSize);
 			}
 			if (firstContainer != 0)
 			{
-				Console.WriteLine($"1л: " + firstContainer + "шт.");
+				Console.WriteLine($"1л: " + (int)firstContainer + "шт.");
 			}
 		}
 	}
