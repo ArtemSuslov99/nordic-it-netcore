@@ -3,12 +3,6 @@ using System.Globalization;
 
 namespace _4th_Homework
 {
-	enum ContainerType
-	{
-		Small,
-		Medium,
-		Large
-	}
 	class Program
 	{
 		static void Main(string[] args)
@@ -16,9 +10,9 @@ namespace _4th_Homework
 			const int smallContainerSize = 1;
 			const int mediumContainerSize = 5;
 			const int largeContainerSize = 20;
-			var firstContainer = ContainerType.Small;
-			var secondContainer = ContainerType.Medium;
-			var thirdContainer = ContainerType.Large;
+			int firstContainer = 0;
+			int secondContainer = 0;
+			int thirdContainer = 0;
 			string delimite =
 				CultureInfo
 				.CurrentCulture
@@ -35,27 +29,26 @@ namespace _4th_Homework
 			{
 				firstNumber = Math.Ceiling(firstNumber - largeContainerSize);
 			}
-			if (thirdContainer != 0)
-			{
-				Console.WriteLine($"20л: " + (int)thirdContainer + "шт.");
-			}
-
 			for (secondContainer = 0; mediumContainerSize <= firstNumber; secondContainer++)
 			{
 				firstNumber = Math.Ceiling(firstNumber - mediumContainerSize);
 			}
-			if (secondContainer != 0)
-			{
-				Console.WriteLine($"5л: " + (int)secondContainer + "шт.");
-			}
-
 			for (firstContainer = 0; smallContainerSize <= firstNumber; firstContainer++)
 			{
 				firstNumber = Math.Ceiling(firstNumber - smallContainerSize);
 			}
+
+			if (thirdContainer != 0)
+			{
+				Console.WriteLine("20л: " + thirdContainer + "шт.");
+			}
+			if (secondContainer != 0)
+			{
+				Console.WriteLine("5л: " + secondContainer + "шт.");
+			}
 			if (firstContainer != 0)
 			{
-				Console.WriteLine($"1л: " + (int)firstContainer + "шт.");
+				Console.WriteLine("1л: " + firstContainer + "шт.");
 			}
 		}
 	}
