@@ -8,13 +8,26 @@ namespace _4th_ClassWork
 {
 	class Program
 	{
-		[Flags]
-		enum CarType : byte
+		enum DaysOfWeek
 		{
-			None = 0,
-			SUV = 1,
-			Sedan = 2,
-			Truck = 4,
+			Monday,
+			Tuesday,
+			Wednesday
+		}
+
+		[Flags]
+		enum Colors
+		{
+			//None = 0x0,
+			Black = 0x1,
+			Blue = 0x2,
+			Cyan = 0x4,
+			Grey = 0x8,
+			Green = 0x10, //16 = 0x10
+			Magenta = 0x20, // 0x20 = 32
+			Red = 0x40, // 64 = 0x40
+			White = 0x80,
+			Yellow = 0x100
 		}
 
 		public static void Main(string[] args)
@@ -142,23 +155,68 @@ namespace _4th_ClassWork
 			//Console.WriteLine(
 			//	(DayTime)((int)currentDayTime + 1));
 
-			var myCarType = CarType.Sedan;
-			WriteByteValueWithBits((byte)myCarType);
+			//var myCarType = CarType.Sedan;
+			//WriteByteValueWithBits((byte)myCarType);
 
-			CarType supportedCars =
-				CarType.SUV
-				| CarType.Sedan
-				| CarType.Truck;
+			//CarType supportedCars =
+			//	CarType.SUV
+			//	| CarType.Sedan
+			//	| CarType.Truck;
 
-			WriteByteValueWithBits((byte)supportedCars);
+			//WriteByteValueWithBits((byte)supportedCars);
+
+			// -------------------------------------------OR
+			//DaysOfWeek firstWorkingDay = DaysOfWeek.Monday;
+			//Months springMonths;
+			//springMonths = 0;
+			//springMonths |= Months.March;
+			//springMonths |= Months.April;
+			//springMonths |= Months.May;
+
+			//Console.WriteLine($"Spring Moth: {springMonths}");
+
+			//int a = 10;
+			//a += 11;
+
+
+			//---------------------------------------AND
+			//bool januaryIsSpringMonth =
+			//	(springMonths & Months.January) > 0;
+			//Console.WriteLine(januaryIsSpringMonth);
+
+			//bool mayIsSpringMonth =
+			//	(springMonths & Months.May) > 0;
+			//Console.WriteLine(mayIsSpringMonth);
+
+			//----------------------------------------XOR
+
+			//Months allMonths = (Months)(0x80 - 1);
+			//Months notSpringMonths = allMonths ^ springMonths;
+			//Console.WriteLine(notSpringMonths);
+
+			//-----------------------------------------------------------
+
+			Colors allColors = (Colors)(0x200 - 1);
+			Console.WriteLine($"Выберите 4 любимых цвета: {allColors}");
+			Colors favoriteColors = 0;
+			for (int i = 0; i < 4; i++)
+			{
+				favoriteColors |= Enum.Parse<Colors>(Console.ReadLine());
+			}
+			Console.WriteLine($"Ваши избранные цвета: {favoriteColors}");
+			Colors notFavoriteColors = allColors ^ favoriteColors;
+			Console.WriteLine($"Ваши не любимые цвета: {notFavoriteColors}");
+
 		}
-		static void WriteByteValueWithBits(byte value)
-		{
-			Console.WriteLine(
-				"0x{0}\t({1})\t{2}",
-				value.ToString("X").PadLeft(2, '0'),
-				Convert.ToString(value, 2).PadLeft(8, '0'),
-				value.ToString().PadLeft(3, '0'));
-		}
+		//static void WriteByteValueWithBits(byte value)
+		//{
+		//	Console.WriteLine(
+		//		"0x{0}\t({1})\t{2}",
+		//		value.ToString("X").PadLeft(2, '0'),
+		//		Convert.ToString(value, 2).PadLeft(8, '0'),
+		//		value.ToString().PadLeft(3, '0'));
+		//}
+
+
 	}
 }
