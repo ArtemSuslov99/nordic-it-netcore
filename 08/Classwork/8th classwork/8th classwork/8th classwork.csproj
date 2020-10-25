@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>_7th_Homework</RootNamespace>
+    <RootNamespace>_8th_classwork</RootNamespace>
   </PropertyGroup>
 
 </Project>
