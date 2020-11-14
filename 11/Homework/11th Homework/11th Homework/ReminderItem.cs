@@ -20,14 +20,7 @@ namespace _11th_Homework
 		{
 			get
 			{
-				bool IsOutdated;
-				if (TimeToAlarm > TimeSpan.Zero)
-				{
-					IsOutdated = true;
-				}
-				else
-					IsOutdated = false;
-				return IsOutdated;
+				return TimeToAlarm > TimeSpan.Zero;
 			}
 		}
 		public ReminderItem() { }
