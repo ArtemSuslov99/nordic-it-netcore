@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http.Headers;
 using System.Text;
 
-namespace _11th_Homework
+namespace _12th_Homework
 {
 	class ReminderItem
 	{
@@ -31,7 +31,7 @@ namespace _11th_Homework
 			AlarmDate = alarmDate;
 		}
 
-		public void WriteProperties()
+		public virtual void WriteProperties()
 		{
 			string outDated = IsOutdated
 				? "будильник не просрочен"
