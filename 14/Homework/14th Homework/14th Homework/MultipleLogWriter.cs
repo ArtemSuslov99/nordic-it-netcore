@@ -6,6 +6,21 @@ namespace _14th_Homework
 {
     class MultipleLogWriter : BaseLogWriter
     {
+        private static MultipleLogWriter _multipleLogWriter;
+        private MultipleLogWriter()
+        {
+
+        }
+        public static MultipleLogWriter GeyInstance()
+        {
+            if (_multipleLogWriter == null)
+            {
+                _multipleLogWriter = new MultipleLogWriter();
+            }
+            return _multipleLogWriter;
+        }
+
+
         private IEnumerable<ILogWriter> _logWriters;
 
         public MultipleLogWriter(params ILogWriter[] writers)

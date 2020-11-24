@@ -7,6 +7,22 @@ namespace _14th_Homework
 {
     class FileLogWriter : BaseLogWriter, ILogWriter
     {
+
+        private static FileLogWriter _fileLogWriter;
+        private FileLogWriter()
+        {
+
+        }
+
+        public static FileLogWriter GeyInstance()
+        {
+            if (_fileLogWriter == null)
+            {
+                _fileLogWriter = new FileLogWriter();
+            }
+            return _fileLogWriter;
+        }
+
         private string FileName { get; }
 
         public FileLogWriter(string fileName)
