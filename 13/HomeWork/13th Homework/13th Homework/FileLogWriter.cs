@@ -16,12 +16,12 @@ namespace _13th_Homework
 
         public override void WriteMessage(string message, MessageType type)
         {
-            var fs = File.Open(FileName, FileMode.OpenOrCreate);
-            fs.Seek(0, SeekOrigin.End);
-            var tw = new StreamWriter(fs);
-            tw.WriteLine(FormatMessage(message, type));
-            tw.Close();
-            fs.Close();
+            using (var fs = File.Open(FileName, FileMode.OpenOrCreate))
+            {
+                fs.Seek(0, SeekOrigin.End);
+                using (var tw = new StreamWriter(fs))
+                    tw.WriteLine(FormatMessage(message, type));
+            }
         }
     }
 }
